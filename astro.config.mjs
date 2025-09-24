@@ -2,9 +2,11 @@ import { defineConfig, envField } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import node from '@astrojs/node';
 
+import vercel from '@astrojs/vercel';
+
 export default defineConfig({
   output: 'server',
-  adapter: node({ mode: process.env.NODE_ENV || 'development' }),
+  adapter: vercel(),
   integrations: [tailwind()],
   env: {
     schema: {
